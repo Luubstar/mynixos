@@ -76,6 +76,10 @@
     rebuild = "~/rebuild.sh";
   };
 
+  programs.bash.initExtra = ''
+    alias rebuild="~/rebuild.sh"
+  '';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

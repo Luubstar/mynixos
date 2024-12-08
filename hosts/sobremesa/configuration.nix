@@ -117,7 +117,8 @@
    kitty
    pass-wayland
    home-manager
-   git
+   gnupg
+   pinentry
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -131,9 +132,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  #services.openssh.enable = true;
+  #services.openssh.passwordAuthentication = false;
+  #services.openssh.permitRootLogin = "prohibit-password";
 
-  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.

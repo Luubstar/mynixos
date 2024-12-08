@@ -2,10 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
 {
-  imports =
-  [
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  imports = [
     ./hardware-configuration.nix
     ../../nixosModules/default.nix
   ];
@@ -25,7 +29,23 @@
   networking.hostName = "sobremesa"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--no-write-lock-file"
+      "-L" # print build logs
+    ];
+    dates = "17:00";
+    randomizedDelaySec = "45min";
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -95,13 +115,15 @@
   users.users.nbr = {
     isNormalUser = true;
     description = "Nicolas Barona Riera";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
-
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -112,13 +134,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   neovim
-   wget
-   kitty
-   pass-wayland
-   home-manager
-   gnupg
-   pinentry
+    neovim
+    wget
+    kitty
+    pass-wayland
+    home-manager
+    gnupg
+    pinentry-curses
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,20 +1,20 @@
-{ config, pkgs, ... }:
+{ config, lib, ... }:
 let
-  enableAllHyprland = config.my.enableAllUHyprland or false;
+  enableAllHyprland = config.my.enableAllHyprland or false;
 in
 {
+  options.my.enableAllHyprland = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable Hyprland";
+  };
+
   imports = [
     ./cachix.nix
     ./hyprland.nix
     ./systools.nix
-    ./wayland.nix
+    ./waybar.nix
   ];
-
-  options.my.enableAllHyprland = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-    description = "Enable Hyprland";
-  };
 
   config = lib.mkIf enableAllHyprland {
     #Enable Hyprland cache

@@ -12,7 +12,7 @@ in
   options.my.enableGit = lib.mkOption {
     type = lib.types.bool;
     default = false;
-    description = "Enable Discord in the system";
+    description = "Enable git in the system";
   };
 
   config = lib.mkIf enableGit {

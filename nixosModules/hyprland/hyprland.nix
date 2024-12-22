@@ -2,6 +2,8 @@
   config,
   pkgs,
   inputs,
+  lib,
+  services,
   ...
 }:
 let
@@ -16,14 +18,13 @@ in
 
   config = lib.mkIf enableHyprland {
     programs.hyprland.enable = true;
-    programs.hyprland.package = input.hyprland.packages."${pkgs.system}".hyprland;
+    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    sound.enable = true;
     security.rtkit.enable = true;
-    services.pipewirte = {
+    services.pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;

@@ -4,9 +4,9 @@ let
 in
 {
   options.my.enableAllHyprland = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable Hyprland";
+    type = lib.types.bool;
+    default = false;
+    description = "Enable Hyprland";
   };
 
   imports = [

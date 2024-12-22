@@ -19,7 +19,7 @@ in
       mako
       libnotify
       kitty
-      sww
+      swww
       rofi-wayland
     ];
 

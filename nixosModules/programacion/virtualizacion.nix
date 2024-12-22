@@ -25,6 +25,7 @@ in
       win-virtio
       win-spice
       qemu
+      virtio-win
     ];
     users.groups.libvirtd.members = [ "nbr" ];
 
@@ -41,6 +42,9 @@ in
     };
 
     services.spice-vdagentd.enable = true;
-
+    boot.kernelModules = [
+      "kvm-amd"
+      "kvm-intel"
+    ];
   };
 }

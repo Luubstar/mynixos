@@ -18,6 +18,11 @@ in
   config = lib.mkIf enableDiscord {
     environment.systemPackages = with pkgs; [
       vesktop
+      electron
+      libmp3lame
+      libopus
+      libvorbis
+      libxcb-dri2
     ];
   };
 }

@@ -1,4 +1,3 @@
-
 {
   config,
   pkgs,
@@ -14,7 +13,7 @@ let
 
     sleep 1
 
-    ${pkgs.swww}/bin/swww img ${.&/wallpaper.png} &
+    ${pkgs.swww}/bin/swww img ${./wallpaper.png} &
 
   '';
 in

@@ -39,12 +39,10 @@ in
       spiceUSBRedirection.enable = true;
     };
     services.spice-vdagentd.enable = true;
-  };
-
-  dconf.settings = {
+    programs.dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" ];
-      uris = [ "qemu:///system" ];
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 }

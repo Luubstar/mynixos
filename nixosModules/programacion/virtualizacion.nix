@@ -38,12 +38,8 @@ in
       };
       spiceUSBRedirection.enable = true;
     };
+
     services.spice-vdagentd.enable = true;
-    programs.dconf.settings = {
-      "org/virt-manager/virt-manager/connections" = {
-        autoconnect = [ "qemu:///system" ];
-        uris = [ "qemu:///system" ];
-      };
-    };
+
   };
 }

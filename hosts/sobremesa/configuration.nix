@@ -119,12 +119,15 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "libvirtd"
     ];
     packages = with pkgs; [
       kdePackages.kate
       #  thunderbird
     ];
   };
+
+  programs.dconf.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;

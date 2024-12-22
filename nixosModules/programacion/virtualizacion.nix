@@ -25,8 +25,6 @@ in
       win-virtio
       win-spice
     ];
-    programs.dconf.enable = true;
-    users.users.gcis.extraGroups = [ "libvirtd" ];
     users.groups.libvirtd.members = [ "nbr" ];
 
     virtualisation = {

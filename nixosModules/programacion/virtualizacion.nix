@@ -17,7 +17,7 @@ in
 
   config = lib.mkIf enableKVM {
     programs.virt-manager.enable = true;
-    user.groups.libvirtd.members = [ "nbr" ];
+    users.groups.libvirtd.members = [ "nbr" ];
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
   };

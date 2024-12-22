@@ -21,6 +21,7 @@
   my.enableDiscord = true;
   my.enableGit = true;
   my.enableNixfmt = true;
+  my.enableKVM = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -5,5 +5,6 @@
     ./social/discord.nix
     ./programacion/git.nix
     ./programacion/nixfmt.nix
+    ./programacion/virtualizacion.nix
   ];
 }

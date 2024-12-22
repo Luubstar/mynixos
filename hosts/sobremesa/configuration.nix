@@ -140,7 +140,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
-    kitty
     pass-wayland
     home-manager
     gnupg

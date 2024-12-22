@@ -6,5 +6,6 @@
     ./programacion/git.nix
     ./programacion/nixfmt.nix
     ./programacion/virtualizacion.nix
+    ./hyprland/bundle.nix
   ];
 }

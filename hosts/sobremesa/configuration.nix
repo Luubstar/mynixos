@@ -105,7 +105,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -131,6 +130,7 @@
       kdePackages.qtsvg
       kdePackages.kio-fuse
       kdePackages.kio-extras
+      dolphin
     ];
   };
 
@@ -144,8 +144,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
-  users.users.nbr.shell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -162,8 +160,6 @@
     home-manager
     gnupg
     pinentry-curses
-    yazi
-    dolphin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

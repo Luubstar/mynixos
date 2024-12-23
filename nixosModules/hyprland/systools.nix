@@ -24,7 +24,7 @@ in
       clipman
       cliphist
       hyprlock
+      yazi
     ];
-
   };
 }

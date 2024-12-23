@@ -93,7 +93,13 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+
+  security = {
+    polkit.enable = true;
+    pam.services.hyprlock = { };
+    rtkit.enable = true;
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

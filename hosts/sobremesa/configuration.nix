@@ -121,6 +121,10 @@
     ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.qtwayland
+      kdePackages.qtsvg
+      kdePackages.kio-fuse
+      kdePackages.kio-extras
     ];
   };
 

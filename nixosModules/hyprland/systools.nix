@@ -21,6 +21,8 @@ in
       kitty
       swww
       rofi-wayland
+      clipman
+      cliphist
     ];
 
   };

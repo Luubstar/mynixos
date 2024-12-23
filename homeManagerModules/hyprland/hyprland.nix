@@ -25,6 +25,9 @@ in
 
       settings = {
         exec-one = ''${startupScript}/bin/start'';
+
+        "$mod" = "SUPER";
+        bind = [ "$mod, F, exec firefox" ];
       };
     };
   };

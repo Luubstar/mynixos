@@ -23,6 +23,7 @@ in
       rofi-wayland
       clipman
       cliphist
+      hyprlock
     ];
 
   };

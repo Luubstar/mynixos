@@ -23,7 +23,7 @@
   my.enableGit = true;
   my.enableNixfmt = true;
   my.enableKVM = true;
-  my.enableAllHyprland = true;
+  my.enableAllHyprland = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -141,7 +141,7 @@
   services.displayManager.sddm.enable = true;
 
   # Configuraciones de Plasma
-  services.desktopManager.plasma6.enable = false;
+  services.desktopManager.plasma6.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;

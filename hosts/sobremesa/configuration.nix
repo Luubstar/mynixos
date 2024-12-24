@@ -106,11 +106,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    manager = "wireplumber";
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  hardware.pulseaudio.enable = false;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -160,6 +163,7 @@
     home-manager
     gnupg
     pinentry-curses
+    wireplumber
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

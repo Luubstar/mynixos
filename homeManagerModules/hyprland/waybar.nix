@@ -5,21 +5,14 @@
   ...
 }:
 let
-  enableWaybar = config.my.enableWaybar or false;
+  # Define el paquete modificado
+  customWaybar = pkgs.waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  });
 in
 {
-  options.my.enableWaybar = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-    description = "Enable waybar in the system";
-  };
-
-  config = lib.mkIf enableWaybar {
-    environment.systemPackages = with pkgs; [
-      (waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      }))
-    ];
-
-  };
+  # Activa la gestión de paquetes con Home Manager
+  home.packages = with pkgs; [
+    customWaybar
+  ];
 }

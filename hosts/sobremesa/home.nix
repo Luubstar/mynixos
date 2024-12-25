@@ -68,18 +68,8 @@
   # or
   #
   #  /etc/profiles/per-user/nbr/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
 
-  home.shellAliases = {
-    rebuild = "~/rebuild.sh";
-  };
-
-  programs.bash.initExtra = ''
-    alias rebuild="~/rebuild.sh"
-  '';
+  programs.zsh.shell = pkgs.zsh;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf enableSystools {
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       mako
       libnotify
       kitty

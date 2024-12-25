@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   lib,
+  services,
   ...
 }:
 let
@@ -19,7 +20,25 @@ let
   '';
 in
 {
+  options.my.enableHyprland = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Enable Hyprland in the system by Home Manager";
+  };
+
   config = lib.mkIf enableHyprland {
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+
     home.sessionVariables.NIXOS_OZONE_WL = "1";
     wayland.windowManager.hyprland = {
       enable = true;

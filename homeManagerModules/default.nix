@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./hyprland/hyprland.nix
+    ./hyprland/bundle.nix
     ./tools/zsh.nix
   ];
 }

@@ -9,10 +9,20 @@ let
   customWaybar = pkgs.waybar.overrideAttrs (oldAttrs: {
     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
   });
+
+  enableWaybar = config.my.enableWaybar or false;
 in
 {
-  # Activa la gestión de paquetes con Home Manager
-  home.packages = with pkgs; [
-    customWaybar
-  ];
+  options.my.enableWaybar = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Enable waybar in the system";
+  };
+
+  config = lib.mkIf enableWaybar {
+    # Activa la gestión de paquetes con Home Manager
+    home.packages = with pkgs; [
+      customWaybar
+    ];
+  };
 }

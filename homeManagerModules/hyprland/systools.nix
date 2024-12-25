@@ -11,7 +11,7 @@ in
   options.my.enableSystools = lib.mkOption {
     type = lib.types.bool;
     default = false;
-    description = "Enable waybar in the system";
+    description = "Enable systools in the system";
   };
 
   config = lib.mkIf enableSystools {

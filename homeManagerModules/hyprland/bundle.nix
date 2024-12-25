@@ -10,7 +10,6 @@ in
   };
 
   imports = [
-    ./cachix.nix
     ./hyprland.nix
     ./systools.nix
     ./waybar.nix
@@ -18,7 +17,6 @@ in
 
   config = lib.mkIf enableAllHyprland {
     #Enable Hyprland cache
-    my.enableCachix = true;
     my.enableHyprland = true;
     my.enableSystools = true;
     my.enableWaybar = true;

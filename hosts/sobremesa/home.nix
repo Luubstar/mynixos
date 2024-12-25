@@ -69,8 +69,6 @@
   #
   #  /etc/profiles/per-user/nbr/etc/profile.d/hm-session-vars.sh
 
-  programs.zsh.shell = pkgs.zsh;
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

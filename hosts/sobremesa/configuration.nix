@@ -24,6 +24,7 @@
   my.enableNixfmt = true;
   my.enableKVM = true;
   my.enableAllHyprland = true;
+  my.enableCachix = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -161,6 +162,9 @@
     wireplumber
     vscode
   ];
+
+  users.users.nbr.shell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

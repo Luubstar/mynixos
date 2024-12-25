@@ -23,7 +23,6 @@
   my.enableGit = true;
   my.enableNixfmt = true;
   my.enableKVM = true;
-  my.enableAllHyprland = true;
   my.enableCachix = true;
 
   # Bootloader.

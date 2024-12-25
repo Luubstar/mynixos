@@ -1,0 +1,21 @@
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
+let
+  enableHyprlandModule = config.my.enableHyprlandModule or false;
+in
+{
+  options.my.enableHyprlandModule = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Enable Hyprland Cachix System in the system";
+  };
+
+  config = lib.mkIf enableHyprlandModule {
+    programs.hyprland.enable = true;
+    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
+}

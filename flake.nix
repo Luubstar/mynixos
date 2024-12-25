@@ -41,7 +41,7 @@
       homeConfigurations = {
         nbr = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          specialArgs = { inherit inputs system; };
+          extraSpecialArgs = { inherit inputs system; };
           modules = [
             ./hosts/sobremesa/home.nix
             ./homeManagerModules/default.nix

@@ -28,7 +28,13 @@ in
 
   config = lib.mkIf enableHyprland {
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.config = {
+      common = {
+        default = [
+         "gtk"
+        ];
+      };
+    }
 
     home.sessionVariables.NIXOS_OZONE_WL = "1";
     wayland.windowManager.hyprland = {

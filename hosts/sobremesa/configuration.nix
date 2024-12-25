@@ -160,6 +160,11 @@
     pinentry-curses
     wireplumber
     vscode
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-kde
+    xdg-desktop-portal-wlr
   ];
 
   #users.users.nbr.shell = pkgs.zsh;

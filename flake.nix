@@ -10,10 +10,10 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    #hyprland-plugins = {
-    #  url = "github:hyprwm/hyprland-plugins";
-    #  inputs.hyprland.follows = "hyprland";
-    #};
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs =
@@ -41,6 +41,7 @@
       homeConfigurations = {
         nbr = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          specialArgs = { inherit inputs system; };
           modules = [
             ./hosts/sobremesa/home.nix
             ./homeManagerModules/default.nix

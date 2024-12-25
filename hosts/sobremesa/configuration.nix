@@ -91,9 +91,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-
   security = {
     polkit.enable = true;
     pam.services.hyprlock = { };

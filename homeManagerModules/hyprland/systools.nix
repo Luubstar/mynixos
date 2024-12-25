@@ -19,7 +19,7 @@ in
       mako
       libnotify
       kitty
-      swww
+      #swww
       rofi-wayland
       clipman
       cliphist

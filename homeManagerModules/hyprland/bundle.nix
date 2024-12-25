@@ -18,7 +18,7 @@ in
   config = lib.mkIf enableAllHyprland {
     #Enable Hyprland cache
     my.enableHyprland = true;
-    my.enableSystools = true;
-    my.enableWaybar = true;
+    my.enableSystools = false;
+    my.enableWaybar = false;
   };
 }

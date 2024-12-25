@@ -33,13 +33,6 @@ in
     home.sessionVariables.NIXOS_OZONE_WL = "1";
     wayland.windowManager.hyprland = {
       enable = true;
-
-      settings = {
-        exec-one = ''${startupScript}/bin/start'';
-
-        "$mod" = "SUPER";
-        bind = [ "$mod, F, exec firefox" ];
-      };
     };
   };
 }

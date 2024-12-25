@@ -11,7 +11,7 @@ in
   options.my.enableHyprlandModule = lib.mkOption {
     type = lib.types.bool;
     default = false;
-    description = "Enable Hyprland Cachix System in the system";
+    description = "Enable Hyprland in the system";
   };
 
   config = lib.mkIf enableHyprlandModule {

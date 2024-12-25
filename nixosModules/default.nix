@@ -7,5 +7,6 @@
     ./programacion/nixfmt.nix
     ./programacion/virtualizacion.nix
     ./hyprland/cachix.nix
+    ./hyprland/hyprlandModule.nix
   ];
 }

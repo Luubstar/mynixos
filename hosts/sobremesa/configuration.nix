@@ -24,6 +24,7 @@
   my.enableNixfmt = true;
   my.enableKVM = true;
   my.enableCachix = true;
+  my.enableHyprlandModule = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -166,10 +166,11 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-kde
     xdg-desktop-portal-wlr
+    zsh
   ];
 
-  #users.users.nbr.shell = pkgs.zsh;
-  #environment.shells = with pkgs; [ zsh ];
+  users.users.nbr.shell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

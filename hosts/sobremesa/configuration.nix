@@ -99,13 +99,15 @@
     rtkit.enable = true;
   };
 
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    #manager = "wireplumber";
+    audio.enable = true;
+    manager = "wireplumber";
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -161,7 +163,6 @@
     gnupg
     pinentry-curses
     wireplumber
-    vscode
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland

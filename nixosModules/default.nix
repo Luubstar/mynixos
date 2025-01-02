@@ -2,6 +2,7 @@
 {
   imports = [
     ./gaming/steam.nix
+    ./gaming/heroic.nix
     ./social/discord.nix
     ./programacion/git.nix
     ./programacion/nixfmt.nix

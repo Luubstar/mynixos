@@ -25,6 +25,7 @@
   my.enableKVM = true;
   my.enableCachix = true;
   my.enableHyprlandModule = true;
+  my.enableHeroic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
